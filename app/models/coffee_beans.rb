@@ -1,5 +1,4 @@
 class CoffeeBean < ActiveRecord::Base
-    belongs_to :region
-    belongs_to :supplier
-    has_many :buyers, through: :suppliers   
+    belongs_to :roaster
+    has_many :users, through: :roasters
 end
