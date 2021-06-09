@@ -1,9 +1,20 @@
 <div class="container">
-  <header><img src="images/corneal-small.png" class="img-responsive main-image"></header>
-  <div class="col-md-8 col-md-offset-2">
-    <h2>Sinatra Template Default Page</h2>
+  <img src="https://media1.thehungryjpeg.com/thumbs2/800_3531037_uxdvz55x0gr0tuohsjjnqvqesu6l8majkc0bui0w_60-coffee-beans-png-shapes-amp-objects.jpg" alt="Coffee Bean Map">
+  <p>The coffee world is complex, a beans journey from growing, processing, roasting and eventually into a delicious cup of coffee, 
+        is a beautiful and tedious process.<p>
+        <div class="sidebar">
+      <h3>Environment</h3>
+      <ul>
+        <li><b>Login:</b><%=</li>
+        <br>
+        <li><b>Signup:</b></li>
+        <br>
+        <li><b>About:</b></li> 
+      </ul>
+      </div
+    </div>
 
-    <div class="content">
+    div class="content">
       <p>Welcome to the Sinatra Template! If you're seeing this page, then everything is working
       as expected. To get started, delete this file (<code>app/views/welcome.erb)</code> and begin adding
       your own actions to <code>application_controller.rb</code>. For more information, see the <a href="https://github.com/thebrianemory/corneal">README</a>.</p>
@@ -18,6 +29,3 @@
         <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
       </ul>
     </div>
-
-  </div>
-</div>
