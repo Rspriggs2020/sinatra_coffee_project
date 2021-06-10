@@ -1,4 +1,8 @@
 <h1>Welcome! The coffee is brewing..<h1>
 <% if logged_in? %>
-Username: <%=@user.username%>
-<% end %>
+<h2>Username: <%=@user.username%><h2>
+<%end%>
+<br>
+<form method="post" action="/logout">
+<input type="submit" value="Log Out">
+</form>

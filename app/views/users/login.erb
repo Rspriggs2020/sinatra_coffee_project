@@ -1,6 +1,12 @@
-<h1>Sign in Here!</h1>
-<form method="post" action="/login">
-<label>Username: <input type="text" id="login_username" name="username"></label>
-<label>Password: <input type="text" id="login_password" name="password"></label>
-<input type="submit" value="Log in">
-</form>
+<div class="form">
+   <h1>Login Here!</h1>
+   <form action="/login" method="post">
+    <div class="login">
+      <label>Username</label>
+      <input type="text" class="login-form" name="username">
+      <br>
+      <input type="text" class="login-form" name="password">
+    </div>
+   <button type="submit" class="btn btn-primary" value="Login"</button>
+  </form>
+</div>
