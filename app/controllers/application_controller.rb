@@ -9,8 +9,8 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "coffeeissocool"
   end
   
-  get '/' do
-    erb :layout
+  get '/' do 
+    erb :welcome
   end
 
   helpers do
@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-      current_user ||= User.find_by(id: session[:user_id])
+      current_user ||= User.find_by(session[:user_id]) if session[:user_id]
     end
   end
 end

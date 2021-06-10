@@ -29,3 +29,27 @@
         <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
       </ul>
     </div>
+
+    <!DOCTYPE html>
+<html>
+  <head>
+    <title>SinatraCoffeeProject</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>The Fascinating World of Coffee!</h1>
+    </div>
+    <div class="content">
+      <p>The coffee world is complex, a beans journey from growing, processing, roasting and eventually into a delicious cup of coffee, 
+      is a beautiful and tedious process</p>
+      </div>
+    <div class="sidebar">
+      <a href="/login">Login</a>
+      <a href="/signup">Signup</a>
+    </div>
+    <div class="footer"
+      <h2>&copy; 2021 SinatraCoffeeProject<h2>
+    </div>
+  </body>
+</html>
