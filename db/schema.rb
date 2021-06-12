@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 2021_06_12_001525) do
   create_table "drinks", force: :cascade do |t|
     t.string "name"
     t.integer "size"
-    t.string "details"
     t.string "flavor"
     t.string "milk"
     t.string "toppings"
+    t.string "details"
     t.integer "user_id"
     t.string "image_url"
   end

@@ -24,10 +24,18 @@ class ApplicationController < Sinatra::Base
       !!current_user
     end
 
+  private 
+
     def if_not_logged_in
       if !logged_in?
         redirect to '/login'
       end
+    end
+
+    def valid_password?(password)
+      symbols = "!@#$%^&*()*,.?/"
+      array = symbols.split("")
+      array.any? {|s| password.include?(s)}
     end
   end
 end

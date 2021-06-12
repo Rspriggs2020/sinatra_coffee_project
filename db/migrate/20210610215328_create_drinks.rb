@@ -3,10 +3,10 @@ class CreateDrinks < ActiveRecord::Migration[5.2]
     create_table :drinks do |t|
       t.string :name
       t.integer :size
-      t.string :details
       t.string :flavor
       t.string :milk
       t.string :toppings
+      t.string :details
       t.integer :user_id
     end
   end

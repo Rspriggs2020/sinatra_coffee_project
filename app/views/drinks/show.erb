@@ -1,13 +1,16 @@
-<div class="info">
-<h3 class="drink_info"><%=@drink.name%></h3>
+<div class='drink_show'>
+
 <br>
-<br>
-<div class="info">
-<p>Name: <%=@drink.name%></p>
+<div class='drink_info'>
+<p>Name: <%= @drink.name%></p>
 <p>Size: <%=@drink.size%></p>
 <p>Flavor: <%=@drink.flavor%></p>
 <p>Milk: <%=@drink.milk%></p>
 <p>Toppings: <%=@drink.toppings%></p>
-<p>Details: <%=@drink.details%></p>
+<p>Details: <%=@drink.details%></p
 </div>
-</div>
+<a id="showedit" href="/drinks/<%=@drink.id%>/edit">Edit</a>
+<form method="post" action="/drinks/<%=@drink.id%>">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
+</form>

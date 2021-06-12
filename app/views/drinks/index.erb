@@ -1,23 +1,13 @@
 <% @drinks.all.each do |d|%>
     <div class="info">
-        <h3><a class='' href='/drinks/<%=d.id%>'><%=d.name%></a></h3>
+        <h3><a class='drank' href='/drinks/<%=d.id%>'><%=d.name%></a></h3>
         <br>
         <div class="drink_info">
         <p>Name: <%=d.name%></p>
         <p>Size: <%=d.size%></p>
         <p>Flavor: <%=d.flavor%></p>
-        <p>Milk: <%=d.flavor%></p>
+        <p>Milk: <%=d.milk%></p>
         <p>Toppings: <%=d.toppings%></p>
         <p>Details: <%=d.details%></p>
-        </div>
-            <% if current_user.drinks.include?(d) %>
-            <br>
-             <form method="post" action="/drinks/<%=d.id%></delete>"
-            <input id="hidden" type="hidden" name="_method" value="DELETE">
-            input type="submit" value="Delete">
-            </form>
-            <form method="get" action="/drinks/<%=d.id%>/edit">
-             <input type="submit" value="Edit Drink">
-        </form>
-    <%end%>
+    </div>
 <%end%>

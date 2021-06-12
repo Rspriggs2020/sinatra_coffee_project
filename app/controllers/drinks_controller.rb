@@ -21,7 +21,7 @@ class DrinksController < ApplicationController
         if params.empty?
             redirect '/drinks/new'
         elsif logged_in? && !params.empty?
-            @drink = current_user.drinks.create(name: params[:name])
+            @drink = current_user.drinks.create(name: params[:name], size: params[:size], flavor: params[:flavor], milk: params[:milk], toppings: params[:toppings], details: params[:details])
             if @drink.save
                 redirect "/drinks/#{@drink.id}"
             else
@@ -35,10 +35,10 @@ class DrinksController < ApplicationController
 
     get '/drinks/:id' do
         if logged_in?
-            @drink = Drink.find_by_id(params[:id])
+            @drink = Drink.find_by(id: params[:id])
             erb :'drinks/show'
-        else 
-            redirect '/login'
+        else
+            redirect'/drinks/new'
         end
     end
 
@@ -60,8 +60,7 @@ class DrinksController < ApplicationController
     end
 
     delete '/drinks/:id' do
-        if_not_logged_in
-        @drink = Drink.find_by_id(params[:id])
+        @drink = Drink.find_by(id: params[:id])
         @drink.destroy
         redirect '/drinks'
     end
