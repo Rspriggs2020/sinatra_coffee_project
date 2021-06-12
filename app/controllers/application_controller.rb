@@ -10,17 +10,25 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/' do 
-    erb :layout
+    @drinks = Drink.all
+    erb :welcome
   end
 
   helpers do
+
+    def current_user
+      current_user ||= User.find_by(id: session[:user_id])
+    end
 
     def logged_in? 
       !!current_user
     end
 
-    def current_user
-      current_user ||= User.find_by(session[:user_id]) if session[:user_id]
+    def if_not_logged_in
+      if !logged_in?
+        redirect to '/login'
+      end
     end
   end
 end
+ 

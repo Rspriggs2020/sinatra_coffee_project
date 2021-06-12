@@ -1,23 +1,40 @@
-<!DOCTYPE html> 
-<html>
-    <head>
-    <title>SinatraCoffeeProject</title>
-    <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-    <div class="container">
-    <h1>The Fascinating World of Coffee!</h1>
+<!DOCTYPE html>
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+  <title>CoffeeProject</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="wrapper">
+ 
+  <div class="container">
+  <div class ='header'>
+      <% if logged_in? %>
+      <ul>
+        <li><a href="/drinks"> Home </a></li>
+        <li><a href="/users/<%=current_user.slug%>"> Your Drinks </a></li>
+        <li><a href="/drink/new"> Create drink </a></li>
+        <li><a href="/logout"> Log Out </a></li>
+      </ul>
+      <% else %>
+      <ul>
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/login"> Log In </a></li>
+      </ul>
+      <%end %>
     </div>
-    <div class="content">
-    <p>The coffee world is complex, a beans journey from growing, processing, roasting and eventually into a delicious cup of coffee, 
-    is a beautiful and tedious process</p>
-    </div>
-    <div class="sidebar">
-      <a href="/login">Login</a>
-      <a href="/signup">Signup</a>
-    </div>
-    <div class="footer"
-      <h2>&copy; 2021 SinatraCoffeeProject<h2>
-    </div>
-  </body>
-</html>
+   <br>
+    <%= yield %>
+      </div>
+    <footer class="branding">
+      <h2>&copy; 2021 SinatraCoffeeProject</h2>
+    </footer>
+  </div> 
+</body>
