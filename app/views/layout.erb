@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
 
   <meta charset="utf-8" />
@@ -12,10 +13,11 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  
  
   <div class="container">
-  <div class ='header'>
+  
+  <div class ="header">
       <% if logged_in? %>
       <ul>
         <li><a href="/drinks"> Your Drinks </a></li>
@@ -23,17 +25,22 @@
         <li><a href="/logout"> Log Out </a></li>
       </ul>
       <% else %>
-      <ul>
-        <li><a href="/signup">Sign Up</a></li>
-        <li><a href="/login"> Log In </a></li>
+      <a href="/signup">Signup</a>
+      <a href="/login"> Login</a>
       </ul>
+      
       <%end %>
     </div>
+    <div class="content">
+  <p>Coffee is our morning fuel. Whether you are a creature of habit, or always down to try new things, you can create your very own drink here and try it out for yourself!</p>
    <br>
+   <img="coffee_heart.jpeg">
     <%= yield %>
       </div>
-    <footer class="branding">
+    <div class="footer">
       <h2>&copy; 2021 SinatraCoffeeProject</h2>
-    </footer>
+      </div>
+    </div>
   </div> 
 </body>
+</html>
