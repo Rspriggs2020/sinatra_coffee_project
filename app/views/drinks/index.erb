@@ -1,3 +1,4 @@
+
 <% @drinks.all.each do |d|%>
     <div class="info">
         <h3><a class='drank' href='/drinks/<%=d.id%>'><%=d.name%></a></h3>
@@ -10,4 +11,6 @@
         <p>Toppings: <%=d.toppings%></p>
         <p>Details: <%=d.details%></p>
     </div>
-<%end%>
+    <%end%>
+
+

@@ -19,11 +19,11 @@
   
   <div class ="header">
       <% if logged_in? %>
-      <ul>
-        <li><a href="/drinks"> Your Drinks </a></li>
-        <li><a href="/drink/new"> Create drink </a></li>
-        <li><a href="/logout"> Log Out </a></li>
-      </ul>
+        <a href="/drinks"> Your Drinks </a>
+        <br>
+        <a href="/drink/new"> Create drink </a>
+        <br>
+        <a href="/logout"> Log Out </a>
       <% else %>
       <a href="/signup">Signup</a>
       <a href="/login"> Login</a>
@@ -31,10 +31,9 @@
       
       <%end %>
     </div>
-    <div class="content">
-  <p>Coffee is our morning fuel. Whether you are a creature of habit, or always down to try new things, you can create your very own drink here and try it out for yourself!</p>
+
+  <p div class="content">Coffee is our morning fuel. Whether you are a creature of habit, or always down to try new things, you can create your very own drink here and try it out for yourself!</hp>
    <br>
-   <img="coffee_heart.jpeg">
     <%= yield %>
       </div>
     <div class="footer">
