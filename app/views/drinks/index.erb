@@ -1,5 +1,6 @@
-
-<% @drinks.all.each do |d|%>
+<h2 Your Drinks </h2>
+<%if !current_user.drinks.empty?%>
+<%current_user.drinks.each do |d|%>
     <div class="info">
         <h3><a class='drank' href='/drinks/<%=d.id%>'><%=d.name%></a></h3>
         <br>
@@ -9,8 +10,12 @@
         <p>Flavor: <%=d.flavor%></p>
         <p>Milk: <%=d.milk%></p>
         <p>Toppings: <%=d.toppings%></p>
-        <p>Details: <%=d.details%></p>
     </div>
     <%end%>
+    <%else%>
+    <%="You must Create a Drink First!"%>
+<%end%>
+ 
+
 
 

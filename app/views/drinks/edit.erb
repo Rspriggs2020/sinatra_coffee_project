@@ -1,13 +1,21 @@
 <h1>Edit Drink</h1>
   <form action="/drinks/<%=@drink.id%>" method="post">
     <input id="hidden" type="hidden" name="_method" value="PATCH">
-      <p>Name: <input type="text" name="name"></p>
-      <p>Size: <input type="text" name="size"></p>
-      <p>Flavor: <input type="text" name="flavor"></p>
-      <p>Milk: <input type="text" name="milk"></p>
-      <p>Toppings: <input type="text" name="toppings"></p>
-      <p>Details: <input type="text" name="details"></p>
+      <p><%=@drink.name%></p>
+      <p><%=@drink.size%></p>
+      <p><%=@drink.flavor%></p>
+      <p><%=@drink.milk%></p>
+      <p><%=@drink.toppings%></p>
       <br>
-      <button type="submit" class="btn btn-primary">Submit</button>
-      
-  </form>
+      <p>New Name: <input type="text" name="name" required></p>
+      <p>New Size: <input type="text" name="size" required></p>
+      <p>New Flavor: <input type="text" name="flavor" required></p>
+      <p>New Milk: <input type="text" name="milk" required></p>
+      <p>New Toppings: <input type="text" name="toppings" required></p>
+
+      <br>
+      <%if current_user.drinks.include?(@drink)%>
+      <input type="submit" name="Submit">
+      <%end%>
+      </form>
+

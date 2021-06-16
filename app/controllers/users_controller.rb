@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   get '/signup' do
     if logged_in?
-        redirect to "/users/#{@user.slug}"
+        redirect to "/users/#{current_user.slug}"
     else
         erb :'users/signup'
     end
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     user = User.new(username: params[:username].downcase, password: params[:password])
     if user.save
       session[:user_id] = user.id
-      redirect to "/users/#{user.slug}"
+      redirect to "/users/#{current_user.slug}"
     else
       erb :'users/signup'
     end
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   get '/login' do 
     if logged_in?
       user = User.find_by(id: session[:user_id])
-      redirect to "users/#{user.slug}"
+      redirect to "users/#{current_user.slug}"
     else
       erb :'users/login'
     end
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     user = User.find_by(username: params[:username].downcase)
     if !!user && !!user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect to "users/#{user.slug}"
+      redirect to "users/#{current_user.slug}"
     else
       redirect to '/login'
     end
@@ -57,5 +57,13 @@ class UsersController < ApplicationController
     if_not_logged_in
     current_user.destroy
     redirect to '/'
+  end
+
+  private
+
+  def correct_user?
+    if current_user != @user
+      redirect to '/login'
+    end
   end
 end
