@@ -5,30 +5,17 @@
       <link rel="stylesheet" href="css/main.css">
   </head>
       <body>
-  
-  <div class ="header">
-      <% if logged_in? %>
-        <a href="/drinks"> Drink Menu </a>
-        <br>
-        <a href="/drink/new"> Create drink </a>
-        <br>
-        <a href="/logout"> Log Out </a>
-      <% else %>
-      <a href="/signup">Signup</a>
-      <a href="/login"> Login</a>
-      </ul>
-      
-      <%end %>
-    </div>
-
-  <p div class="content">Coffee is our morning fuel. Whether you are a creature of habit, or always down to try new things, you can create your very own drink here and try it out for yourself!</hp>
-   <br>
+          <nav>
+          <a class ="header"></a>
+          <% if logged_in? %>
+          <a href="/drinks"> Drink Menu </a>
+          <br>
+          <a href="/drink/new"> Create drink </a>
+          <br>
+          <a href="/logout"> Log Out </a>
+          <%end%>
+        </nav>
+      <br>
     <%= yield %>
-      </div>
-    <div class="footer">
-      <h2>&copy; 2021 SinatraCoffeeProject</h2>
-      </div>
-    </div>
-  </div> 
-</body>
+  </body>
 </html>
